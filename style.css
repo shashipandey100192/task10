@@ -1,0 +1,35 @@
+
+*{
+	margin:0 auto;
+	padding:0;
+
+}
+.first
+{
+	color:orange;
+	padding:20px;
+	background-color: tomato;
+}
+
+h5
+{
+	color:pink !important;
+}
+
+.row
+{
+	width:1200px;
+	height: 400px;
+	background-color: #4b531b;
+	text-align:center;
+	font-size: 50px;
+	font-weight: bold;
+	color:white;
+	text-transform: uppercase;
+	font-family: arial;
+	letter-spacing: 10px;
+	word-spacing: 10px;
+	line-height: 70px;
+	overflow-y: scroll;
+	border:2px solid black;
+}
