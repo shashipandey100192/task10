@@ -1,0 +1,47 @@
+@media print{
+
+   body
+   {
+        background-color: transparent;
+   }
+
+   @page
+   {
+    size: A4 portrait;
+   }
+
+   .page
+   {
+    display: block;
+    border: none;
+   }
+   .page section
+   {
+    display: block;
+    page-break-after: always;
+   }
+   header,footer
+   {
+    display: block;
+    position: fixed;
+   }
+
+   header
+   {
+    top:0;
+   }
+   footer
+   {
+    bottom: 0;
+   }
+
+   .watermark
+   {
+    display: block;
+    margin-top:300px;
+   }
+
+
+}
+
+

@@ -1,0 +1,98 @@
+
+
+
+@media(max-width:1200px)
+{
+body
+{
+    background-color: aqua;
+}
+.page
+{
+    width:100%;
+}
+
+
+
+}
+
+
+@media(max-width:900px)
+{
+    body{
+        background-color: blueviolet;
+    }
+    .hd
+    {
+        display: none;
+    }
+
+    
+}
+
+
+
+
+@media(max-width:700px)
+{
+    body{
+        background-color: azure;
+    }
+    .hd1
+    {
+        display: none;
+    }
+    .page img
+    {
+        filter: grayscale(100%);
+    }
+    
+}
+
+
+
+
+@media(max-width:500px)
+{
+    body
+    {
+        background-color: black;
+       
+        }
+    .hd,.hd1
+    {
+        display: block;
+    }
+    .page
+    {
+        flex-direction: column;
+    }
+    .page h2
+    {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top:20px;
+        margin-bottom: 10px;
+        animation:xyz 1s infinite alternate linear;
+    }
+    .page p
+    {
+        text-align: justify;
+        column-count: 2;
+
+    }
+    .page img
+    {
+        filter: none;
+    }
+    
+}
+
+
+
+
+
+@keyframes xyz {
+    from{}
+    to{color:red}
+}
