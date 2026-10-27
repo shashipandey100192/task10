@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Joining Letter</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #eef1f5;
+        color: #222;
+        padding: 30px 15px;
+    }
+
+    .letter {
+        max-width: 850px;
+        margin: auto;
+        background: #fff;
+        padding: 45px 55px;
+        border-top: 7px solid #173b68;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 2px solid #173b68;
+        padding-bottom: 20px;
+        margin-bottom: 25px;
+    }
+
+    .company h1 {
+        color: #173b68;
+        font-size: 26px;
+        margin-bottom: 7px;
+    }
+
+    .company p,
+    .contact p {
+        font-size: 12px;
+        color: #555;
+        line-height: 1.7;
+    }
+
+    .contact {
+        text-align: right;
+    }
+
+    .title {
+        text-align: center;
+        color: #173b68;
+        margin: 25px 0;
+        font-size: 22px;
+        text-decoration: underline;
+        text-underline-offset: 7px;
+    }
+
+    .date {
+        text-align: right;
+        margin-bottom: 25px;
+        font-size: 14px;
+    }
+
+    p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 14px;
+    }
+
+    .details {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 14px;
+    }
+
+    .details td {
+        border: 1px solid #d8dee8;
+        padding: 11px;
+    }
+
+    .details td:first-child {
+        background: #f1f5fa;
+        font-weight: bold;
+        width: 38%;
+    }
+
+    h3 {
+        color: #173b68;
+        font-size: 16px;
+        margin: 20px 0 10px;
+    }
+
+    ul {
+        padding-left: 22px;
+        margin-bottom: 20px;
+    }
+
+    li {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 5px;
+    }
+
+    .signatures {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        margin-top: 55px;
+    }
+
+    .sign {
+        width: 45%;
+        font-size: 13px;
+        border-top: 1px solid #444;
+        padding-top: 10px;
+        line-height: 1.8;
+    }
+
+    .footer {
+        text-align: center;
+        border-top: 1px solid #ddd;
+        padding-top: 15px;
+        margin-top: 35px;
+        color: #777;
+        font-size: 11px;
+    }
+
+    .print-btn {
+        display: block;
+        margin: 20px auto;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        background: #173b68;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+    }
+
+    .print-btn:hover {
+        background: #24558c;
+    }
+
+    @media print {
+        body {
+            background: white;
+            padding: 0;
+        }
+
+        .letter {
+            box-shadow: none;
+            max-width: 100%;
+            padding: 25px;
+        }
+
+        .print-btn {
+            display: none;
+        }
+
+        @page {
+            size: A4;
+            margin: 12mm;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .letter {
+            padding: 25px 18px;
+        }
+
+        .header {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact {
+            text-align: left;
+        }
+
+        .signatures {
+            flex-direction: column;
+        }
+
+        .sign {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+    <input type="button" value="generate letter" onclick="letterbuild()">
+
+    <div id="one">
+
+    </div>
+<button class="print-btn" onclick="window.print()">
+    Print / Save as PDF
+</button>
+
+
+<script>
+function letterbuild()
+{
+    var name,age,jtitle,email,date;
+    name = prompt("enter name");
+    age = prompt("enter age");
+    jtitle = prompt("enter title");
+    email = prompt("enter email");
+    date = prompt("enter date");
+
+var mytemplate = `<div class="letter">
+
+    <header class="header">
+        <div class="company">
+            <h1>${name}</h1>
+            <p>Technology | Innovation | Growth</p>
+            <p>Company Address, Noida, Uttar Pradesh</p>
+        </div>
+
+        <div class="contact">
+            <p>HR Department</p>
+            <p>${email}</p>
+            <p>www.yourcompany.com</p>
+        </div>
+    </header>
+
+    <h2 class="title">${jtitle}</h2>
+
+    <div class="date">
+        <strong>Date:</strong> ${date}
+    </div>
+
+    <p>
+        To,<br>
+        <strong>Mr./Ms. [${name}]</strong><br>
+        [Employee Address]
+    </p>
+
+    <p><strong>Subject: Joining Confirmation for the Position of [Job Title]</strong></p>
+
+    <p>Dear [${name}],</p>
+
+    <p>
+        We are pleased to welcome you to <strong>YOUR COMPANY NAME</strong>.
+        With reference to your appointment letter, we confirm your joining
+        in our organization under the following terms and details.
+    </p>
+
+    <table class="details">
+        <tr>
+            <td>Employee Name</td>
+            <td>[Employee Full Name]</td>
+        </tr>
+        <tr>
+            <td>Employee ID</td>
+            <td>[Employee ID]</td>
+        </tr>
+        <tr>
+            <td>Designation</td>
+            <td>[Software Developer / Trainer]</td>
+        </tr>
+        <tr>
+            <td>Department</td>
+            <td>Information Technology</td>
+        </tr>
+        <tr>
+            <td>Date of Joining</td>
+            <td>[Joining Date]</td>
+        </tr>
+        <tr>
+            <td>Employment Type</td>
+            <td>[Full-Time / Part-Time]</td>
+        </tr>
+        <tr>
+            <td>Monthly Salary</td>
+            <td>₹ [Monthly Salary]</td>
+        </tr>
+        <tr>
+            <td>Reporting Manager</td>
+            <td>[Manager Name]</td>
+        </tr>
+        <tr>
+            <td>Work Location</td>
+            <td>Noida, Uttar Pradesh</td>
+        </tr>
+    </table>
+
+    <h3>Terms and Conditions</h3>
+
+    <ul>
+        <li>You are expected to perform your duties responsibly and professionally.</li>
+        <li>You must comply with the company's applicable policies and procedures.</li>
+        <li>You must maintain the confidentiality of company and client information.</li>
+        <li>Your working hours and weekly offs will follow the applicable company policy and law.</li>
+        <li>Leave, notice period, and other employment conditions will be governed by your appointment letter and applicable law.</li>
+    </ul>
+
+    <p>
+        We welcome you to our team and look forward to your contribution
+        to the growth and success of our organization.
+    </p>
+
+    <p>
+        Kindly sign below as confirmation that you have received and
+        understood this joining letter.
+    </p>
+
+    <div class="signatures">
+        <div class="sign">
+            <strong>For YOUR COMPANY NAME</strong><br><br><br>
+            Authorized Signatory<br>
+            Name: __________________
+        </div>
+
+        <div class="sign">
+            <strong>Employee Acceptance</strong><br><br><br>
+            Employee Signature<br>
+            Name: [Employee Name]
+        </div>
+    </div>
+
+    <div class="footer">
+        YOUR COMPANY NAME | Official Employment Document
+    </div>
+
+</div>`;
+document.getElementById("one").innerHTML=mytemplate;
+
+}
+
+
+</script>
+
+
+</body>
+</html>

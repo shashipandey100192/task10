@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1 id="one">heading</h1>
+<input type="button" value="submit" onclick="xyz()">
+<input type="button" value="clear" onclick="clearmytime()">
+<script>
+    
+// var a = 1;
+// function xyz()
+// {
+//     var jsh = document.getElementById("one");
+//     jsh.innerHTML=a;
+//     a++;
+// }
+
+// setInterval("xyz()",2000);
+
+
+// var a = 1;
+// function xyz()
+// {
+//     var jsh = document.getElementById("one");
+//     jsh.innerHTML=a;
+//     a++;
+//     if(a>=20)
+// {
+//     clearInterval(b);
+// }
+// }
+
+// var b = setInterval("xyz()",500);
+
+
+
+var a = 1;
+function xyz()
+{
+    var jsh = document.getElementById("one");
+    jsh.innerHTML=a;
+    a++;
+    if(a>=20)
+{
+    a=1;
+}
+}
+
+var b = setInterval("xyz()",500);
+
+
+var bg1=["red","green","blue","orange"];
+var c = 0;
+setInterval(()=>{
+    console.log(c);
+    c++;
+    if(c>=bg1.length)
+{
+    c=0;
+}
+    document.bgColor=bg1[c]
+
+},1000);
+
+
+
+
+function msg()
+{
+    alert("welcome to javascript");
+}
+
+
+var z = setTimeout("msg()",500000);
+
+function clearmytime()
+{
+    clearTimeout(z);
+    msg();
+}
+
+
+
+
+
+</script>
+
+
+</body>
+</html>
